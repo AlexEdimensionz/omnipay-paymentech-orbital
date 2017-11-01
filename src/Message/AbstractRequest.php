@@ -2,6 +2,8 @@
 
 namespace Omnipay\PaymentechOrbital\Message;
 
+use SimpleXMLElement;
+
 /**
  *  Paymentech Orbital Abstract Request
  */
@@ -24,11 +26,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $httpResponse = $this->httpClient->post(
             $this->getEndpoint(),
             $this->getHeaders(),
-            $data,
-            array('exceptions' => false)
-        )
-        ->send();
-        return $this->createResponse($httpResponse->xml());
+            $data
+        );
+
+        $xml = new SimpleXMLElement($httpResponse->getBody()->getContents());
+
+        return $this->createResponse($xml);
     }
 
     abstract protected function createResponse($data);
