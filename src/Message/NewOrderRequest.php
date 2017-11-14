@@ -50,6 +50,10 @@ abstract class NewOrderRequest extends AbstractRequest
             $newOrder->AVSDestcountryCode = $card->getShippingCountry();
         }
 
+        $newOrder->CustomerProfileFromOrderInd = 'A';
+        $newOrder->CustomerProfileOrderOverrideInd = 'NO';
+        $newOrder->Status = 'A';
+
         $newOrder->OrderID   = $this->getOrderId();
         $newOrder->Amount    = $this->getAmountInteger();
         $newOrder->Comments  = $this->getComments();
