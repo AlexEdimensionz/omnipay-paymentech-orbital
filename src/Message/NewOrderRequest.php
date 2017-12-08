@@ -29,6 +29,10 @@ abstract class NewOrderRequest extends AbstractRequest
             $newOrder->Exp                = $card->getExpiryDate('my');
             $newOrder->CurrencyCode       = $this->getCurrencyCode();
             $newOrder->CurrencyExponent   = $this->getCurrencyExponent();
+            $newOrder->CardSecValInd      = '';
+            if($card->getCvv() && ($card->getBrand() == 'visa' || $card->getBrand() == 'discover')) {
+              $newOrder->CardSecValInd    = '1';
+            }
             $newOrder->CardSecVal         = $card->getCvv();
 
             $newOrder->AVSzip             = $card->getBillingPostcode();
