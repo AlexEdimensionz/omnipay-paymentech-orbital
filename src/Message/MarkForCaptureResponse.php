@@ -12,7 +12,10 @@ class MarkForCaptureResponse extends AbstractResponse
 {
     public function getTransactionReference()
     {
-        return $this->data->MarkForCaptureResp->TxRefNum->__toString();
+        return [
+            'trans_reference'   => $this->data->MarkForCaptureResp->TxRefNum->__toString(),
+            'order_id'          => $this->data->MarkForCaptureResp->OrderID->__toString()
+        ];
     }
 
     public function isApproved()
