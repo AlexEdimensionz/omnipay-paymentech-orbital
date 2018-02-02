@@ -1,5 +1,5 @@
 {
-    "name": "twg/omnipay-paymentech-orbital",
+    "name": "alexedimensionz/omnipay-paymentech-orbital",
     "type": "library",
     "description": "Paymentech Orbital driver for the Omnipay payment processing library",
     "keywords": [
@@ -12,12 +12,12 @@
         "pay",
         "payment"
     ],
-    "homepage": "https://github.com/twg/omnipay-paymentech-orbital",
+    "homepage": "https://github.com/AlexEdimensionz/omnipay-paymentech-orbital",
     "license": "MIT",
     "authors": [
         {
-            "name": "Matt MacAulay",
-            "email": "mac@twg.ca"
+            "name": "Alex",
+            "email": "info@wyldcode.com"
         },
         {
             "name": "Omnipay Contributors",
